@@ -18,7 +18,7 @@ var pool = mysql.createPool({
 });
 
 
-exports.pool = function (selectSQL ) {
+exports.pool = function (selectSQL, callback) {
   pool.getConnection(function (err, conn) {
     if (err) console.log("POOL ==> " + err);
     conn.query(selectSQL,function(err,rows){
@@ -26,11 +26,10 @@ exports.pool = function (selectSQL ) {
       console.log("SELECT ==> ");
       for (var i in rows) {
         console.log(rows[i]);
+
+        callback(err, rows);
       }
       conn.release();
-
     });
   });
 }
-
-//module.exports.pool = pool;
