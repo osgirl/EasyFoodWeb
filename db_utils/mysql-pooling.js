@@ -18,7 +18,7 @@ var pool = mysql.createPool({
 });
 
 
-exports.pool = function (selectSQL, callback) {
+exports.select = function (selectSQL, callback) {
   pool.getConnection(function (err, conn) {
     if (err) console.log("POOL ==> " + err);
     conn.query(selectSQL,function(err,rows){

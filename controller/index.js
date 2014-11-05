@@ -8,7 +8,7 @@ var mysql = require('../db_utils/mysql-pooling');
 
 exports.index = function(req, res){
     var SELECTSQL="select * from test"
-  var rows = mysql.pool(SELECTSQL, function (err, doc) {
+  var rows = mysql.select(SELECTSQL, function (err, doc) {
     res.json({data: doc});
   });
 
