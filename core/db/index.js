@@ -1,9 +1,9 @@
 /**
  * decorator for mysql
  */
-var jdbc  = require("../../config/jdbc")
+var jdbcConfig  = require("../../config/jdbc")
 var mysql = require('mysql')
-    , pool = mysql.createPool(jdbc)
+var pool = mysql.createPool(jdbcConfig)
 
 // for bunch queris like select + found_rows
 exports.getConn = function (next) {
