@@ -26,3 +26,6 @@ tmp/
 
 # npm安装日志
 npm-debug.log
+
+# bower 目录
+vendor/

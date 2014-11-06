@@ -1,11 +1,10 @@
-
 /**
  * Module dependencies.
  */
 
 var express = require('express');
 
-var ejs=require('ejs');
+var ejs = require('ejs');
 var http = require('http');
 var path = require('path');
 var routes = require('./routes');
@@ -31,6 +30,6 @@ if ('development' == app.get('env')) {
 //添加路由
 routes(app);
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });

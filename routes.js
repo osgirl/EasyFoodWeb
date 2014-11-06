@@ -1,5 +1,5 @@
-var routes = require('./controller');
-var user = require('./controller/user');
+var routes = require('./controllers');
+var user = require('./controllers/user');
 module.exports = function (app) {
   app.get('/', routes.index);
   app.get('/users', user.list);
@@ -13,3 +13,4 @@ function web(app) {
 function api(app) {
 
 }
+

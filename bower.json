@@ -1,0 +1,11 @@
+{
+  "name": "angular-basic",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "1.9.1",
+    "angular": "~1.2.12-build.2226",
+    "angular-route": "~1.2.12-build.2226"
+  },
+  "devDependencies": {
+  }
+}
