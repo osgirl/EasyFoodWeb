@@ -10,10 +10,10 @@ var mysql = require('mysql');
 
 
 var pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '123',
-  database: 'cm',
+  host: 'rdsaaibfyaaibfy.mysql.rds.aliyuncs.com',
+  user: 'redmine',
+  password: 'redmine1234',
+  database: 'rl6u490qba4r8717',
   port: 3306
 });
 
@@ -24,11 +24,7 @@ exports.select = function (selectSQL, callback) {
     conn.query(selectSQL,function(err,rows){
       if (err) console.log(err);
       console.log("SELECT ==> ");
-      for (var i in rows) {
-        console.log(rows[i]);
-
         callback(err, rows);
-      }
       conn.release();
     });
   });
