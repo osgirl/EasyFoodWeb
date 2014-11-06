@@ -28,4 +28,4 @@ tmp/
 npm-debug.log
 
 # bower 目录
-vendor/
+public/vendor/*

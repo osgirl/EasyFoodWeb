@@ -1,7 +1,10 @@
 /*
  * GET users listing.
  */
+var user = require("../proxy/user");
 
 exports.list = function (req, res) {
-  res.send("respond with a resource");
+    user.usersList({}, function (err, result) {
+        res.json({result: result});
+    });
 };
