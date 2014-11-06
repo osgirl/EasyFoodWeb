@@ -11,6 +11,9 @@ var routes = require('./routes');
 
 var app = express()
 
+// 静态文件目录
+var staticDir = path.join(__dirname, 'public');
+
 dbPool = require('./core/db');
 db = undefined;
 
@@ -23,12 +26,15 @@ dbPool.getConn(function (dbConn) {
     app.set('views', __dirname + '/views');
     app.set('view engine', 'html');
     app.engine("html", ejs.__express);
-    app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'bower_components')));
+
+    app.use(express.json());
+    app.use(express.urlencoded());
+    console.log(path.join(__dirname, 'public'))
+    app.use('/public', express.static(staticDir));
 
 // development only
     if ('development' == app.get('env')) {
