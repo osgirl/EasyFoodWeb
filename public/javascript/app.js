@@ -2,7 +2,7 @@
 // Here is how to define your module
 // has dependent on mobile-angular-ui
 //
-var app = angular.module('MobileAngularUiExamples', [
+var app = angular.module('jsApp', [
     'ngRoute',
     'ngTouch',
     'mobile-angular-ui'
@@ -20,6 +20,7 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/drag', {templateUrl: '/public/drag.html', reloadOnSearch: false});
     $routeProvider.when('/carousel', {templateUrl: '/public/carousel.html', reloadOnSearch: false});
 });
+
 
 //
 // `$drag` example: drag to dismiss
@@ -259,4 +260,4 @@ app.controller('MainController', function ($rootScope, $scope) {
             $scope.notices.splice(index, 1);
         }
     };
-});
+})

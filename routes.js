@@ -12,8 +12,11 @@ module.exports = function (app) {
 };
 
 function web(app) {
-    app.get('/', routes.index);
+//    app.get('/', routes.index);
     app.get('/users', user.list);
+  app.get("/", function (req, res) {
+    res.render("test");
+  });
 
     app.get("\/partials\/?([^\/]+)?(.html)\/?", partial.partialRender);
 }
