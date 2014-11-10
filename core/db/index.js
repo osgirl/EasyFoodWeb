@@ -9,6 +9,9 @@ var pool = mysql.createPool(jdbcConfig)
 exports.getConn = function (next) {
     pool.getConnection(function (err, conn) {
         var dbObj = {
+            execut : function(){
+                conn.update()
+            },
             // standard query
             q: function (sql, callee, next) {
                 if (typeof(callee) != 'object' || !(callee instanceof Array)) {
